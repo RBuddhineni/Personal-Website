@@ -1,10 +1,11 @@
 {
     "functions": {
-      "api/*.js": {
+      "frontend/api/*.js": {
         "runtime": "nodejs20.x"
       }
     },
     "rewrites": [
-      { "source": "/api/(.*)", "destination": "/api/$1" }
+      { "source": "/api/(.*)", "destination": "/frontend/api/$1" }
     ]
   }
+  
