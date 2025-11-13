@@ -74,7 +74,7 @@ export default function Projects() {
             />
 
             <div style={{ padding: "20px" }}>
-              <h2 style={{ color: "white", marginBottom: "10px" }}>
+              <h2 style={{ color: "var(--purple)", marginBottom: "10px" }}>
                 {project.title}
               </h2>
               <p style={{ color: "#ccc", fontSize: "0.95rem" }}>
