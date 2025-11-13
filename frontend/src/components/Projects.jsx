@@ -2,7 +2,7 @@ export default function Projects() {
   const projects = [
     {
       title: "AI Bee Varroa Mite Detector",
-      image: "",
+      image: "/images/BeeCard.png",
       description:
         "A computer-vision CNN model that detects Varroa mites on honey bees with high accuracy.",
       link: "https://github.com/RBuddhineni/ML-Bee-Research",
