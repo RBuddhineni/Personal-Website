@@ -1,26 +1,39 @@
 # Personal-Website
-Personal Portfolio — MERN Stack
+A modern personal portfolio website built with React and deployed on Vercel.
+This site showcases my projects, experience, and contact information in a clean and responsive layout optimized for both desktop and mobile.
 
-Welcome to my personal portfolio, built end-to-end on the MERN stack: MongoDB, Express, React, and Node.js. This site is my living resume—projects, experience, and things I’m learning—designed to be fast, clean, and easy to extend as I grow.
+Tech Stack
 
-What’s inside
+React – Front-end framework
 
-- MongoDB: Stores dynamic content like projects, blog posts, and contact messages. Simple schemas (e.g., Projects, Posts, Messages) with indexes for quick lookups, connected via Mongoose using ‎`MONGODB_URI`.
+Vite – Lightning-fast development environment
 
-- Express: Lightweight REST API serving the frontend. Routes like ‎`/api/projects` and ‎`/api/contact`, with middleware for JSON parsing, CORS, and basic validation/error handling.
+JavaScript / JSX – Component-based UI
 
-- React: Component-based UI for pages like Home, Projects, About, and Contact. Client-side routing, reusable cards and layout components, and responsive styling for a smooth experience.
+CSS Modules / Tailwind (if you used) – Styling and layout
 
-- Node.js: App runtime and server setup. Boots Express, connects Mongo, provides a ‎`/health` check, and handles environment config for local and production.
+Vercel – Hosting, CI/CD, and automatic deployments
 
-Run locally
+Node.js – Development environment
 
-- Backend: ‎`cd server && npm install && npm run dev`
+GitHub – Version control and repo management
 
-- Frontend: ‎`cd client && npm install && npm run dev`
+Features
 
-- Env: ‎`server/.env` needs ‎`MONGODB_URI` and ‎`PORT`; ‎`client/.env` can set ‎`VITE_API_URL`.
+Fully responsive, mobile-first layout
 
-Deploy
+Projects section with images, descriptions, and external links
 
-Host React on Vercel/Netlify and the Node/Express API on Render/Railway, with MongoDB Atlas for the database.
+About section with background + interests
+
+Resume page (PDF hosted or downloadable)
+
+Contact form / email capture (if included)
+
+Clean purple/white aesthetic with smooth UI transitions
+
+Fast load times thanks to Vite and Vercel
+
+Purpose
+
+Designed to serve as my digital identity — a central place to highlight my work in software engineering, AI, and entrepreneurship, and to showcase the projects I’m actively building or maintaining.
