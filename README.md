@@ -37,3 +37,5 @@ Fast load times thanks to Vite and Vercel
 Purpose
 
 Designed to serve as my digital identity — a central place to highlight my work in software engineering, AI, and entrepreneurship, and to showcase the projects I’m actively building or maintaining.
+
+Access it here: https://personal-website-8ji5t5i5b-rbuddhin-8030s-projects.vercel.app/projects
