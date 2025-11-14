@@ -9,7 +9,7 @@ export default function Projects() {
     },
     {
       title: "AI Face Detector",
-      image: "",
+      image: "/images/FaceDetect.png",
       description:
         "Face Detection using Machine Learning Models: OpenCV and Mediapipe",
       link: "https://github.com/RBuddhineni/Face_Detection",
