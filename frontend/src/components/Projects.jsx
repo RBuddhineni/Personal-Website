@@ -14,6 +14,13 @@ export default function Projects() {
         "Face Detection using Machine Learning Models: OpenCV and Mediapipe",
       link: "https://github.com/RBuddhineni/Face_Detection",
     },
+    {
+      title: "Personal Website",
+      image: "/images/PersonalWebsite.png",
+      description:
+        "A modern, responsive personal portfolio website built with React and deployed on Vercel.",
+      link: "https://github.com/RBuddhineni/Personal-Website",
+    },
     // Add more projects like this ↓
     // {
     //   title: "",
