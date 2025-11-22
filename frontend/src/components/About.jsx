@@ -11,7 +11,7 @@ export default function About() {
       
       {/* Left: Profile Image */}
       <img 
-        src="/your-image.jpg"   // <-- replace with your image or upload to /public
+        src="/images/Raghav_Buddhineni_Photo.png"   // <-- replace with your image or upload to /public
         alt="Raghav Buddhineni"
         style={{
           width: "260px",
