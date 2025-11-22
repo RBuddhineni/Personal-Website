@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={submit} style={{maxWidth:"600px", margin:"0 auto", padding:"20px"}}>
-      <h1 style={{color:"var(--purple)"}}>Contact</h1>
+      <h1 style={{color:"var(--purple)"}}>Feel free to contact me!</h1>
       <input name="name" placeholder="Name" value={form.name} onChange={handle} required style={{width:"100%", margin:"10px 0", padding:"10px"}}/>
       <input name="email" type="email" placeholder="Email" value={form.email} onChange={handle} required style={{width:"100%", margin:"10px 0", padding:"10px"}}/>
       <textarea name="message" placeholder="Message" value={form.message} onChange={handle} required style={{width:"100%", margin:"10px 0", padding:"10px", height:"120px"}}/>
