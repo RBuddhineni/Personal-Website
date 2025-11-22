@@ -26,15 +26,25 @@ export default function About() {
       <div>
         <h1 style={{ color: "var(--purple)", marginBottom: "16px" }}>About Me</h1>
         <p style={{ lineHeight: "1.7", fontSize: "17px", color: "#333" }}>
-          Hey! I'm Raghav — a first-year Computer Science student at the University of Michigan
-          who loves building things that make life easier for people.
+        My name is Raghav Buddhineni, and I grew up in <b>Nashua, New Hampshire</b>, where I 
+        attended Nashua High School South and discovered how much I enjoy building things
+         and competing. Through DECA, robotics, and my nonprofit WonderBox, I learned that
+          I like creating solutions that help people and taking on challenges that actually
+           matter. A lot of who I am today comes from the community I had back home and the
+            experiences that pushed me to grow.
+            <br /><br />
+        I am now a first year <b>Computer Science</b> student at the <b>University of Michigan</b>, 
+        where I have met some of the most driven and like minded people I have ever been
+         around. Whether it is through classes, clubs, or late night conversations in 
+         West Quad, I am constantly surrounded by people who want to build, innovate, 
+         and make an impact. Being here has pushed me to think bigger, improve my skills,
+          and explore new ideas every day.
           <br /><br />
-          I’m passionate about AI, full-stack development, and turning ideas into products that
-          actually help people — whether it's my <b>Varroa-mite AI model</b>, my
-          <b> WonderBox nonprofit</b>, or new things I'm learning every day in West Quad.
-          <br /><br />
-          I'm currently exploring software engineering, AI startups, and product design, and
-          my goal is to create technology that actually improves people’s lives.
+        Right now I am exploring opportunities in <b>software development</b>, <b>artifical intelligence</b>
+        , and <b>tech consulting</b>. I want to work in a space where I can combine
+         technical problem solving with creativity and real world impact, whether that 
+         comes from working at a startup, joining a team in industry, or creating 
+         something of my own.
         </p>
       </div>
     </div>
