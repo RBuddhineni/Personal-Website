@@ -25,6 +25,15 @@ export default function About() {
             <img
               src="/images/Raghav_Buddhineni_Photo.png"
               alt="Raghav Buddhineni"
+              className="about-image about-image-contain"
+            />
+            <div className="image-glow"></div>
+          </div>
+
+          <div className="about-image-frame about-image-secondary">
+            <img
+              src="/images/tennis.png"
+              alt="Raghav playing tennis"
               className="about-image"
             />
             <div className="image-glow"></div>

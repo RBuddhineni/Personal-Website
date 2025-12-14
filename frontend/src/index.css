@@ -355,6 +355,15 @@ body {
   display: block;
 }
 
+.about-image-contain {
+  object-fit: contain;
+  object-position: center;
+}
+
+.about-image-secondary {
+  margin-top: 20px;
+}
+
 .image-glow {
   position: absolute;
   top: 50%;
