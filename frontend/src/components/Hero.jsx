@@ -64,7 +64,7 @@ export default function Hero() {
             Hi, I'm <span className="name-highlight">Raghav Buddhineni</span>
           </h1>
           <p className="hero-subtitle">
-            I build AI products, startups, and tech that makes people's lives easier.
+            I build tech solutions to make everyday life easier.
           </p>
           <div className="hero-tagline">
             <span className="tag">CS @ Michigan</span>
