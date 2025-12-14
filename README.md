@@ -38,4 +38,4 @@ Purpose
 
 Designed to serve as my digital identity — a central place to highlight my work in software engineering, AI, and entrepreneurship, and to showcase the projects I’m actively building or maintaining.
 
-Access it here: https://personal-website-qsw8srxkk-rbuddhin-8030s-projects.vercel.app
+Access it here: [https://personal-website-qsw8srxkk-rbuddhin-8030s-projects.vercel.app](https://personal-website-dqzor1rzl-rbuddhin-8030s-projects.vercel.app)
