@@ -304,6 +304,140 @@ body {
   }
 }
 
+/* ===== ABOUT PAGE ===== */
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.about-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(135deg, var(--maize) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 60px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, var(--maize) 0%, transparent 70%);
+  opacity: 0.2;
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.about-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+}
+
+.about-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.about-paragraph .highlight {
+  color: var(--maize);
+  font-weight: 700;
+  position: relative;
+}
+
+/* ===== RESPONSIVE - ABOUT ===== */
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image-frame {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    padding: 30px 25px;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+
+  .about-title {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-card {
+    padding: 25px 20px;
+  }
+
+  .about-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
 /* ===== CONTACT PAGE ===== */
 .contact-container {
   max-width: 700px;
