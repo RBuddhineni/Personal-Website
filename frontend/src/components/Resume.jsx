@@ -8,7 +8,7 @@ export default function Resume() {
       </p>
 
       <a
-        href="/RaghavResumeCurrent.pdf"
+        href="/images/RaghavResumeCurrent.pdf"
         target="_blank"
         rel="noopener noreferrer"
         style={{
