@@ -69,7 +69,7 @@ export default function Hero() {
           <div className="hero-tagline">
             <span className="tag">CS @ Michigan</span>
             <span className="tag">AI Enthusiast</span>
-            <span className="tag">Startup Builder</span>
+            <span className="tag">Builder</span>
           </div>
         </motion.div>
 
