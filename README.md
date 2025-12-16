@@ -1,41 +1,46 @@
-# Personal-Website
-A modern personal portfolio website built with React and deployed on Vercel.
-This site showcases my projects, experience, and contact information in a clean and responsive layout optimized for both desktop and mobile.
+🌐 Personal Portfolio Website
 
-Tech Stack
+A modern and interactive personal portfolio built with React and deployed on Vercel. Designed with a sleek yellow and black aesthetic, smooth animations, and a responsive layout optimized for all devices.
 
-React – Front-end framework
+🚀 Tech Stack
 
-Vite – Lightning-fast development environment
+React – Component-based UI framework
 
-JavaScript / JSX – Component-based UI
+Vite – Fast dev server and build tool
 
-CSS Modules / Tailwind (if you used) – Styling and layout
+Framer Motion – Page and component animations
 
-Vercel – Hosting, CI/CD, and automatic deployments
+React Router DOM – Client-side navigation
 
-Node.js – Development environment
+Vercel – Hosting and CI/CD deployments
 
-GitHub – Version control and repo management
+Nodemailer – Backend email handling for contact form
 
-Features
+✨ Features
 
-Fully responsive, mobile-first layout
+Animated hero section with interactive portal-style navigation
 
-Projects section with images, descriptions, and external links
+Projects showcase with live demos and GitHub links
 
-About section with background + interests
+About section highlighting background, interests, and story
 
-Resume page (PDF hosted or downloadable)
+Downloadable resume (PDF)
 
-Contact form / email capture (if included)
+Functional contact form connected to email + social links
 
-Clean purple/white aesthetic with smooth UI transitions
+Fully responsive, mobile-first design
 
-Fast load times thanks to Vite and Vercel
+Custom yellow/black theme with subtle glassmorphism effects
 
-Purpose
+🎯 Purpose
 
-Designed to serve as my digital identity — a central place to highlight my work in software engineering, AI, and entrepreneurship, and to showcase the projects I’m actively building or maintaining.
+Built as my digital identity — a unified place to highlight my work, share my background as a Computer Science student at the University of Michigan, and connect with recruiters, engineers, and collaborators.
 
-Access it here: [My portfolio](https://raghavbuddhineni.vercel.app)
+🔗 Live Website
+
+👉 [My portfolio](https://raghavbuddhineni.vercel.app)
+
+🛠 Built With
+
+React + Vite + Framer Motion
+© 2025 Raghav Buddhineni
