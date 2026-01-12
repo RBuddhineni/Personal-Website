@@ -3,10 +3,12 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import ContactForm from "./components/ContactForm";
+import InteractiveBackground from "./components/InteractiveBackground";
 
 export default function App() {
   return (
     <div className="app">
+      <InteractiveBackground />
       <Hero />
 
       <section id="about" className="section-wrapper">
