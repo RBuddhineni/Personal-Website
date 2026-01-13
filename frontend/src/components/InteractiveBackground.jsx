@@ -32,7 +32,7 @@ export default function InteractiveBackground() {
         baseY: 0,
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 3 + 1,
+        size: Math.random() * 4 + 2,
         density: Math.random() * 30 + 10
       });
     }
@@ -96,7 +96,7 @@ export default function InteractiveBackground() {
         if (particle.baseY > canvas.height) particle.baseY = 0;
 
         // Draw particle
-        ctx.fillStyle = `rgba(255, 203, 5, ${0.4 - distance / 1000})`;
+        ctx.fillStyle = `rgba(255, 203, 5, 0.7)`;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
@@ -108,8 +108,8 @@ export default function InteractiveBackground() {
           const distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
 
           if (distance2 < 120) {
-            ctx.strokeStyle = `rgba(108, 92, 231, ${0.2 * (1 - distance2 / 120)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(108, 92, 231, ${0.4 * (1 - distance2 / 120)})`;
+            ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particle2.x, particle2.y);
@@ -144,7 +144,7 @@ export default function InteractiveBackground() {
         height: '100%',
         pointerEvents: 'none',
         zIndex: 0,
-        opacity: 0.6
+        opacity: 0.9
       }}
     />
   );
