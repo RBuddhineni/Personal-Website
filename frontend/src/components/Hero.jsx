@@ -9,7 +9,7 @@ export default function Hero() {
       icon: "👤",
       targetId: "about",
       gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-      delay: 0.1
+      delay: 0
     },
     {
       title: "Projects",
@@ -17,7 +17,7 @@ export default function Hero() {
       icon: "🚀",
       targetId: "projects",
       gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-      delay: 0.2
+      delay: 0.05
     },
     {
       title: "Experience",
@@ -25,7 +25,7 @@ export default function Hero() {
       icon: "💼",
       targetId: "experience",
       gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      delay: 0.3
+      delay: 0.1
     },
     {
       title: "Resume",
@@ -33,7 +33,7 @@ export default function Hero() {
       icon: "📄",
       targetId: "resume",
       gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-      delay: 0.4
+      delay: 0.15
     },
     {
       title: "Contact",
@@ -41,7 +41,7 @@ export default function Hero() {
       icon: "💬",
       targetId: "contact",
       gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-      delay: 0.5
+      delay: 0.2
     }
   ];
 
@@ -77,7 +77,7 @@ export default function Hero() {
           className="portal-grid"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
           {portals.map((portal, index) => (
             <PortalButton key={index} {...portal} />

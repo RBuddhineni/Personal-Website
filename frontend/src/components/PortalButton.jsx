@@ -15,7 +15,7 @@ export default function PortalButton({ title, description, icon, targetId, gradi
       style={{ background: gradient }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.3, delay }}
       whileHover={{
         scale: 1.05,
         boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
