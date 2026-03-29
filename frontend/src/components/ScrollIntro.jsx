@@ -7,6 +7,7 @@ const LINES = [
   { text: "Builder.",         size: "clamp(3rem, 9vw, 7rem)",     weight: 800 },
   { text: "Problem Solver.",  size: "clamp(2rem, 6vw, 4.8rem)",   weight: 800 },
   { text: "CS @ Michigan.",   size: "clamp(2rem, 5.5vw, 4.2rem)", weight: 800 },
+  { text: "Welcome to my Portfolio.", size: "clamp(1.8rem, 5vw, 3.8rem)", weight: 800 },
 ];
 
 function Word({ progress, start, end, text, size, weight }) {
@@ -57,7 +58,7 @@ export default function ScrollIntro() {
   const hintOpacity = useTransform(scrollYProgress, [0, 0.04], [1, 0]);
 
   return (
-    <div ref={containerRef} style={{ height: "480vh" }}>
+    <div ref={containerRef} style={{ height: "576vh" }}>
       <div
         style={{
           position: "sticky",
