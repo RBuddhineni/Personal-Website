@@ -42,7 +42,7 @@ export default function Projects() {
     },
     {
       title: "Yost Facilities Dashboard",
-      image: "/images/YostDashboard.png",
+      image: "/images/Yost.png",
       description:
         "A lightweight, client-only dashboard for Yost Facilities staff to monitor facility check-ins. Aggregates data from four sectors (Ice Quality Reports, Softball Therapy Pool Checks, Fisher Therapy Pool Checks, Yost Ice Depth Checks) via published Google Sheets JSON endpoints — no backend or database required.",
       isPrivate: true,
