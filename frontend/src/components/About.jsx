@@ -1,13 +1,21 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function About() {
+  const titleRef = useRef(null);
+  const imageRef = useRef(null);
+  const textRef  = useRef(null);
+
+  const titleInView = useInView(titleRef, { margin: "-60px" });
+  const imageInView = useInView(imageRef, { margin: "-60px" });
+  const textInView  = useInView(textRef,  { margin: "-60px" });
+
   return (
     <div className="about-container">
       <motion.h1
+        ref={titleRef}
         className="about-title"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-60px" }}
+        animate={{ opacity: titleInView ? 1 : 0, y: titleInView ? 0 : -20 }}
         transition={{ duration: 0.6 }}
       >
         About Me
@@ -15,11 +23,10 @@ export default function About() {
 
       <div className="about-content">
         <motion.div
+          ref={imageRef}
           className="about-image-wrapper"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, margin: "-60px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          animate={{ opacity: imageInView ? 1 : 0, x: imageInView ? 0 : -40 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="about-image-frame">
             <img
@@ -41,11 +48,10 @@ export default function About() {
         </motion.div>
 
         <motion.div
+          ref={textRef}
           className="about-text"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, margin: "-60px" }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          animate={{ opacity: textInView ? 1 : 0, x: textInView ? 0 : 40 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="about-card">
             <p className="about-paragraph">

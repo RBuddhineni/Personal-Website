@@ -1,10 +1,18 @@
+import { useRef } from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import axios from "axios";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name:"", email:"", message:"" });
   const [status, setStatus] = useState("");
+
+  const headerRef  = useRef(null);
+  const socialsRef = useRef(null);
+  const formRef    = useRef(null);
+  const headerInView  = useInView(headerRef,  { margin: "-60px" });
+  const socialsInView = useInView(socialsRef, { margin: "-60px" });
+  const formInView    = useInView(formRef,    { margin: "-60px" });
 
   const handle=(e)=> setForm({...form, [e.target.name]: e.target.value});
 
@@ -59,10 +67,9 @@ export default function ContactForm() {
   return (
     <div className="contact-container">
       <motion.div
+        ref={headerRef}
         className="contact-header"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-60px" }}
+        animate={{ opacity: headerInView ? 1 : 0, y: headerInView ? 0 : 20 }}
         transition={{ duration: 0.6 }}
       >
         <h1 className="contact-title">Let's Connect!</h1>
@@ -72,11 +79,10 @@ export default function ContactForm() {
       </motion.div>
 
       <motion.div
+        ref={socialsRef}
         className="social-buttons"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-60px" }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        animate={{ opacity: socialsInView ? 1 : 0, y: socialsInView ? 0 : 20 }}
+        transition={{ duration: 0.6 }}
       >
         {socials.map((social, index) => (
           <motion.a
@@ -86,10 +92,6 @@ export default function ContactForm() {
             rel="noopener noreferrer"
             className="social-button"
             style={{ '--social-gradient': social.gradient }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, margin: "-60px" }}
-            transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -100,12 +102,11 @@ export default function ContactForm() {
       </motion.div>
 
       <motion.form
+        ref={formRef}
         onSubmit={submit}
         className="contact-form"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-60px" }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        animate={{ opacity: formInView ? 1 : 0, y: formInView ? 0 : 20 }}
+        transition={{ duration: 0.6 }}
       >
         <div className="form-group">
           <input

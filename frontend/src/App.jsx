@@ -1,3 +1,4 @@
+import ScrollIntro from "./components/ScrollIntro";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -9,6 +10,7 @@ export default function App() {
   return (
     <div className="app">
       <InteractiveBackground />
+      <ScrollIntro />
       <Hero />
 
       <section id="about" className="section-wrapper">

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 // ─── Add new entries to the TOP of this array (most recent first) ───────────
 const experiences = [
@@ -44,14 +45,101 @@ const experiences = [
   },
 ];
 
+function TimelineEntry({ exp, index }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { margin: "-60px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -30 }}
+      transition={{ duration: 0.5, delay: inView ? index * 0.08 : 0 }}
+      style={{
+        display: "flex",
+        gap: "36px",
+        marginBottom: index < experiences.length - 1 ? "48px" : "0",
+        position: "relative",
+      }}
+    >
+      {/* Dot */}
+      <div style={{ flexShrink: 0, paddingTop: "4px" }}>
+        <div
+          style={{
+            width: "14px",
+            height: "14px",
+            borderRadius: "50%",
+            background: "var(--purple)",
+            border: "2px solid rgba(108, 92, 231, 0.4)",
+            boxShadow: "0 0 8px rgba(108, 92, 231, 0.5)",
+            marginLeft: "12px",
+          }}
+        />
+      </div>
+
+      {/* Card */}
+      <div
+        style={{
+          flex: 1,
+          background: "rgba(255,255,255,0.04)",
+          backdropFilter: "blur(10px)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "16px",
+          padding: "24px 28px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "8px",
+            marginBottom: "4px",
+          }}
+        >
+          <h2 style={{ color: "#fff", fontSize: "1.05rem", fontWeight: 700, margin: 0 }}>
+            {exp.role}
+          </h2>
+          <span style={{ color: "var(--maize)", fontSize: "0.85rem", fontWeight: 600, whiteSpace: "nowrap" }}>
+            {exp.dates}
+          </span>
+        </div>
+
+        <p style={{ color: "var(--purple-light)", fontSize: "0.9rem", marginBottom: "16px" }}>
+          {exp.company} &nbsp;·&nbsp; {exp.location}
+        </p>
+
+        <ul style={{ paddingLeft: "18px", margin: 0 }}>
+          {exp.bullets.map((b, j) => (
+            <li
+              key={j}
+              style={{
+                color: "#bbb",
+                fontSize: "0.9rem",
+                lineHeight: 1.7,
+                marginBottom: j < exp.bullets.length - 1 ? "8px" : 0,
+              }}
+            >
+              {b}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Experience() {
+  const titleRef = useRef(null);
+  const resumeRef = useRef(null);
+  const titleInView = useInView(titleRef, { margin: "-60px" });
+  const resumeInView = useInView(resumeRef, { margin: "-60px" });
+
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 20px" }}>
       <motion.h1
+        ref={titleRef}
         style={{ color: "var(--purple)", textAlign: "center", marginBottom: "60px" }}
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-60px" }}
+        animate={{ opacity: titleInView ? 1 : 0, y: titleInView ? 0 : -20 }}
         transition={{ duration: 0.6 }}
       >
         Experience
@@ -72,93 +160,15 @@ export default function Experience() {
         />
 
         {experiences.map((exp, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            style={{
-              display: "flex",
-              gap: "36px",
-              marginBottom: i < experiences.length - 1 ? "48px" : "0",
-              position: "relative",
-            }}
-          >
-            {/* Dot */}
-            <div style={{ flexShrink: 0, paddingTop: "4px" }}>
-              <div
-                style={{
-                  width: "14px",
-                  height: "14px",
-                  borderRadius: "50%",
-                  background: "var(--purple)",
-                  border: "2px solid rgba(108, 92, 231, 0.4)",
-                  boxShadow: "0 0 8px rgba(108, 92, 231, 0.5)",
-                  marginLeft: "12px",
-                }}
-              />
-            </div>
-
-            {/* Card */}
-            <div
-              style={{
-                flex: 1,
-                background: "rgba(255,255,255,0.04)",
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "16px",
-                padding: "24px 28px",
-              }}
-            >
-              {/* Header */}
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  flexWrap: "wrap",
-                  gap: "8px",
-                  marginBottom: "4px",
-                }}
-              >
-                <h2 style={{ color: "#fff", fontSize: "1.05rem", fontWeight: 700, margin: 0 }}>
-                  {exp.role}
-                </h2>
-                <span style={{ color: "var(--maize)", fontSize: "0.85rem", fontWeight: 600, whiteSpace: "nowrap" }}>
-                  {exp.dates}
-                </span>
-              </div>
-
-              <p style={{ color: "var(--purple-light)", fontSize: "0.9rem", marginBottom: "16px" }}>
-                {exp.company} &nbsp;·&nbsp; {exp.location}
-              </p>
-
-              <ul style={{ paddingLeft: "18px", margin: 0 }}>
-                {exp.bullets.map((b, j) => (
-                  <li
-                    key={j}
-                    style={{
-                      color: "#bbb",
-                      fontSize: "0.9rem",
-                      lineHeight: 1.7,
-                      marginBottom: j < exp.bullets.length - 1 ? "8px" : 0,
-                    }}
-                  >
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+          <TimelineEntry key={i} exp={exp} index={i} />
         ))}
       </div>
 
       {/* Resume button */}
       <motion.div
+        ref={resumeRef}
         style={{ textAlign: "center", marginTop: "60px" }}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-60px" }}
+        animate={{ opacity: resumeInView ? 1 : 0, y: resumeInView ? 0 : 20 }}
         transition={{ duration: 0.5 }}
       >
         <p style={{ color: "#888", marginBottom: "16px", fontSize: "0.95rem" }}>
