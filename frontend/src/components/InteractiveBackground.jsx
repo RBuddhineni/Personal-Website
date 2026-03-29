@@ -14,14 +14,14 @@ export default function InteractiveBackground() {
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
-      canvas.height = document.documentElement.scrollHeight;
+      canvas.height = window.innerHeight;
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
     // Create particles
-    const particleCount = 80;
+    const particleCount = 60;
     particles.current = [];
 
     for (let i = 0; i < particleCount; i++) {
@@ -100,23 +100,25 @@ export default function InteractiveBackground() {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
+      });
 
-        // Draw connections
-        particles.current.forEach((particle2) => {
-          const dx2 = particle.x - particle2.x;
-          const dy2 = particle.y - particle2.y;
+      // Draw connections in a single pass (each pair once)
+      const pts = particles.current;
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx2 = pts[i].x - pts[j].x;
+          const dy2 = pts[i].y - pts[j].y;
           const distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
-
           if (distance2 < 120) {
             ctx.strokeStyle = `rgba(108, 92, 231, ${0.4 * (1 - distance2 / 120)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(particle2.x, particle2.y);
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
             ctx.stroke();
           }
-        });
-      });
+        }
+      }
 
       animationFrameId.current = requestAnimationFrame(animate);
     };

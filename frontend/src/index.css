@@ -60,9 +60,10 @@ body {
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(60px);
   opacity: 0.3;
   animation: float 20s infinite ease-in-out;
+  will-change: transform;
 }
 
 .orb-1 {
