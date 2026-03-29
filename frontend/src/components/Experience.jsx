@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 // ─── Add new entries to the TOP of this array (most recent first) ───────────
 const experiences = [
   {
@@ -45,9 +47,15 @@ const experiences = [
 export default function Experience() {
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 20px" }}>
-      <h1 style={{ color: "var(--purple)", textAlign: "center", marginBottom: "60px" }}>
+      <motion.h1
+        style={{ color: "var(--purple)", textAlign: "center", marginBottom: "60px" }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-60px" }}
+        transition={{ duration: 0.6 }}
+      >
         Experience
-      </h1>
+      </motion.h1>
 
       {/* Timeline */}
       <div style={{ position: "relative" }}>
@@ -64,8 +72,12 @@ export default function Experience() {
         />
 
         {experiences.map((exp, i) => (
-          <div
+          <motion.div
             key={i}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
             style={{
               display: "flex",
               gap: "36px",
@@ -137,12 +149,18 @@ export default function Experience() {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Resume button */}
-      <div style={{ textAlign: "center", marginTop: "60px" }}>
+      <motion.div
+        style={{ textAlign: "center", marginTop: "60px" }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-60px" }}
+        transition={{ duration: 0.5 }}
+      >
         <p style={{ color: "#888", marginBottom: "16px", fontSize: "0.95rem" }}>
           Want the full picture?
         </p>
@@ -166,7 +184,7 @@ export default function Experience() {
         >
           View / Download Resume →
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 }

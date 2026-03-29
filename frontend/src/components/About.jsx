@@ -7,7 +7,7 @@ export default function About() {
         className="about-title"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, margin: "-60px" }}
         transition={{ duration: 0.6 }}
       >
         About Me
@@ -18,7 +18,7 @@ export default function About() {
           className="about-image-wrapper"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "-60px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="about-image-frame">
@@ -44,7 +44,7 @@ export default function About() {
           className="about-text"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "-60px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="about-card">

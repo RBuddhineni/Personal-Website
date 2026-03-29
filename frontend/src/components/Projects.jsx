@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Projects() {
   const projects = [
     {
@@ -52,11 +54,25 @@ export default function Projects() {
 
   return (
     <div style={{ padding: "40px", maxWidth: "1100px", margin: "0 auto" }}>
-      <h1 style={{ color: "var(--purple)", textAlign: "center" }}>Projects</h1>
+      <motion.h1
+        style={{ color: "var(--purple)", textAlign: "center" }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-60px" }}
+        transition={{ duration: 0.6 }}
+      >
+        Projects
+      </motion.h1>
 
-      <p style={{ textAlign: "center", color: "#bbb", marginTop: "10px" }}>
+      <motion.p
+        style={{ textAlign: "center", color: "#bbb", marginTop: "10px" }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, margin: "-60px" }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
         A collection of things I built — tap any card to learn more.
-      </p>
+      </motion.p>
 
       {/* GRID CONTAINER */}
       <div
@@ -68,8 +84,12 @@ export default function Projects() {
         }}
       >
         {projects.map((project, i) => (
-          <div
+          <motion.div
             key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: i * 0.07 }}
             style={{
               background: "rgba(255,255,255,0.05)",
               backdropFilter: "blur(10px)",
@@ -96,6 +116,7 @@ export default function Projects() {
             }}
             onClick={() => project.link && window.open(project.link, "_blank")}
           >
+
             {project.inProgress && (
               <div
                 style={{
@@ -181,7 +202,7 @@ export default function Projects() {
                 </a>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

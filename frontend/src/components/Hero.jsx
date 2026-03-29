@@ -31,7 +31,7 @@ export default function Hero() {
       title: "Resume",
       description: "View my credentials",
       icon: "📄",
-      targetId: "resume",
+      targetId: "experience",
       gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
       delay: 0.15
     },

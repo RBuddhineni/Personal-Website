@@ -62,7 +62,7 @@ export default function ContactForm() {
         className="contact-header"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, margin: "-60px" }}
         transition={{ duration: 0.6 }}
       >
         <h1 className="contact-title">Let's Connect!</h1>
@@ -75,7 +75,7 @@ export default function ContactForm() {
         className="social-buttons"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, margin: "-60px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {socials.map((social, index) => (
@@ -88,7 +88,7 @@ export default function ContactForm() {
             style={{ '--social-gradient': social.gradient }}
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "-60px" }}
             transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
@@ -104,7 +104,7 @@ export default function ContactForm() {
         className="contact-form"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, margin: "-60px" }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <div className="form-group">
