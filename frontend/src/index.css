@@ -241,17 +241,12 @@ body {
 
 /* ===== SECTION WRAPPERS ===== */
 .section-wrapper {
-  min-height: 100vh;
   padding: 80px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
-}
-
-.section-wrapper:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -279,7 +274,6 @@ body {
   }
 
   .section-wrapper {
-    min-height: auto;
     padding: 60px 20px;
   }
 

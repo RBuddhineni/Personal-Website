@@ -42,7 +42,6 @@ export default function App() {
         textAlign: "center",
         padding: "40px",
         background: "rgba(0,0,0,0.2)",
-        marginTop: "60px",
         color: "#888"
       }}>
         <p>© 2025 Raghav Buddhineni. Built with React + Vite + Framer Motion</p>
