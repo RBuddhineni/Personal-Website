@@ -2,60 +2,23 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const LINES = [
-  {
-    text: "Hi, I'm Raghav.",
-    size: "clamp(2rem, 5.5vw, 4.2rem)",
-    weight: 800,
-    color: "#ffffff",
-    letterSpacing: "-0.02em",
-  },
-  {
-    text: "Student.",
-    size: "clamp(3rem, 9vw, 7rem)",
-    weight: 800,
-    color: "#ffffff",
-    letterSpacing: "-0.03em",
-  },
-  {
-    text: "Builder.",
-    size: "clamp(3rem, 9vw, 7rem)",
-    weight: 800,
-    color: "#FFCB05",
-    letterSpacing: "-0.03em",
-  },
-  {
-    text: "Problem Solver.",
-    size: "clamp(2rem, 6vw, 4.8rem)",
-    weight: 800,
-    color: "#ffffff",
-    letterSpacing: "-0.02em",
-  },
-  {
-    text: "CS @ Michigan.",
-    size: "clamp(2rem, 5.5vw, 4.2rem)",
-    weight: 800,
-    color: "#a29bfe",
-    letterSpacing: "-0.02em",
-  },
+  { text: "Hi, I'm Raghav.", size: "clamp(2rem, 5.5vw, 4.2rem)", weight: 800 },
+  { text: "Student.",         size: "clamp(3rem, 9vw, 7rem)",     weight: 800 },
+  { text: "Builder.",         size: "clamp(3rem, 9vw, 7rem)",     weight: 800 },
+  { text: "Problem Solver.",  size: "clamp(2rem, 6vw, 4.8rem)",   weight: 800 },
+  { text: "CS @ Michigan.",   size: "clamp(2rem, 5.5vw, 4.2rem)", weight: 800 },
 ];
 
-function ScrollWord({ line, progress, start, end }) {
-  // Fade in over first ~25% of this word's range, fade out over last ~25%
+function Word({ progress, start, end, text, size, weight }) {
   const opacity = useTransform(
     progress,
-    [start, start + 0.05, end - 0.05, end],
+    [start, start + 0.06, end - 0.06, end],
     [0, 1, 1, 0]
   );
-  // Float up from below on enter, continue floating up on exit
   const y = useTransform(
     progress,
-    [start, start + 0.09, end - 0.09, end],
-    [36, 0, 0, -36]
-  );
-  const scale = useTransform(
-    progress,
-    [start, start + 0.09],
-    [0.94, 1]
+    [start, start + 0.1, end - 0.1, end],
+    [18, 0, 0, -18]
   );
 
   return (
@@ -64,48 +27,11 @@ function ScrollWord({ line, progress, start, end }) {
         position: "absolute",
         opacity,
         y,
-        scale,
-        fontSize: line.size,
-        fontWeight: line.weight,
-        color: line.color,
-        letterSpacing: line.letterSpacing,
-        textAlign: "center",
-        width: "100%",
-        padding: "0 24px",
-        margin: 0,
-        lineHeight: 1.1,
-        pointerEvents: "none",
-        userSelect: "none",
-      }}
-    />
-  );
-}
-
-// Separate component so the text renders but motion values drive it
-function ScrollWordInner({ line, progress, start, end }) {
-  const opacity = useTransform(
-    progress,
-    [start, start + 0.05, end - 0.05, end],
-    [0, 1, 1, 0]
-  );
-  const y = useTransform(
-    progress,
-    [start, start + 0.09, end - 0.09, end],
-    [36, 0, 0, -36]
-  );
-  const scale = useTransform(progress, [start, start + 0.09], [0.94, 1]);
-
-  return (
-    <motion.p
-      style={{
-        position: "absolute",
-        opacity,
-        y,
-        scale,
-        fontSize: line.size,
-        fontWeight: line.weight,
-        color: line.color,
-        letterSpacing: line.letterSpacing,
+        willChange: "opacity, transform",
+        fontSize: size,
+        fontWeight: weight,
+        color: "#FFCB05",
+        letterSpacing: "-0.02em",
         textAlign: "center",
         width: "100%",
         padding: "0 24px",
@@ -115,7 +41,7 @@ function ScrollWordInner({ line, progress, start, end }) {
         userSelect: "none",
       }}
     >
-      {line.text}
+      {text}
     </motion.p>
   );
 }
@@ -128,8 +54,6 @@ export default function ScrollIntro() {
   });
 
   const step = 1 / LINES.length;
-
-  // Scroll hint fades out once the user starts scrolling
   const hintOpacity = useTransform(scrollYProgress, [0, 0.04], [1, 0]);
 
   return (
@@ -146,16 +70,17 @@ export default function ScrollIntro() {
         }}
       >
         {LINES.map((line, i) => (
-          <ScrollWordInner
+          <Word
             key={i}
-            line={line}
             progress={scrollYProgress}
             start={i * step}
             end={(i + 1) * step}
+            text={line.text}
+            size={line.size}
+            weight={line.weight}
           />
         ))}
 
-        {/* Bounce-scroll hint */}
         <motion.div
           style={{
             position: "absolute",

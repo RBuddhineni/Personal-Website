@@ -47,12 +47,6 @@ export default function Hero() {
 
   return (
     <section className="hero-section">
-      <div className="hero-background">
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
-      </div>
-
       <div className="hero-content">
         <motion.div
           className="hero-text"
