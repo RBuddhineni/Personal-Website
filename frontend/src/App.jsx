@@ -1,7 +1,7 @@
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Resume from "./components/Resume";
+import Experience from "./components/Experience";
 import ContactForm from "./components/ContactForm";
 import InteractiveBackground from "./components/InteractiveBackground";
 
@@ -20,18 +20,7 @@ export default function App() {
       </section>
 
       <section id="experience" className="section-wrapper">
-        <div style={{ padding: "60px 40px", maxWidth: "1100px", margin: "0 auto" }}>
-          <h1 style={{ color: "var(--maize)", textAlign: "center", marginBottom: "20px" }}>
-            Experience & Leadership
-          </h1>
-          <p style={{ textAlign: "center", color: "#bbb", fontSize: "1.1rem" }}>
-            Coming soon! Check back for updates on my professional journey and leadership roles.
-          </p>
-        </div>
-      </section>
-
-      <section id="resume" className="section-wrapper">
-        <Resume />
+        <Experience />
       </section>
 
       <section id="contact" className="section-wrapper">
