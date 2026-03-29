@@ -21,13 +21,24 @@ export default function Projects() {
         "A modern, responsive personal portfolio website built with React and deployed on Vercel.",
       link: "https://github.com/RBuddhineni/Personal-Website",
     },
-    // Add more projects like this ↓
-    // {
-    //   title: "",
-    //   image: "",
-    //   description: "",
-    //   link: ""
-    // }
+    {
+      title: "ScopePlus",
+      image: "/images/ScopePlus.png",
+      description:
+        "A Chrome extension that scrapes Gradescope submissions and calls the Anthropic API (Claude) to generate personalized diagnostic reports and practice questions targeting each student's weak areas. Awarded Best Concept at the UMich MDC AI Hackathon.",
+      link: "https://github.com/RBuddhineni",
+      inProgress: true,
+      tags: "JavaScript · Firebase · Anthropic API",
+    },
+    {
+      title: "FratMap",
+      image: "/images/FratMap.png",
+      description:
+        "A cross-platform mobile social app for college nightlife — featuring event discovery, friend grouping, live location sharing, and real-time coordination. Selected as one of 10 projects at V1 Demo Day.",
+      link: "https://github.com/RBuddhineni",
+      inProgress: true,
+      tags: "Swift · Firebase · Twilio · Google Maps API",
+    },
   ];
 
   return (
@@ -54,10 +65,13 @@ export default function Projects() {
               background: "rgba(255,255,255,0.05)",
               backdropFilter: "blur(10px)",
               borderRadius: "16px",
-              border: "1px solid rgba(255,255,255,0.08)",
+              border: project.inProgress
+                ? "1px solid rgba(138, 43, 226, 0.4)"
+                : "1px solid rgba(255,255,255,0.08)",
               overflow: "hidden",
               cursor: "pointer",
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              position: "relative",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.03)";
@@ -70,6 +84,27 @@ export default function Projects() {
             }}
             onClick={() => window.open(project.link, "_blank")}
           >
+            {project.inProgress && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  right: "12px",
+                  background: "rgba(138, 43, 226, 0.85)",
+                  color: "#fff",
+                  fontSize: "0.7rem",
+                  fontWeight: "bold",
+                  padding: "4px 10px",
+                  borderRadius: "20px",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  zIndex: 1,
+                }}
+              >
+                🔨 In Progress
+              </div>
+            )}
+
             <img
               src={project.image}
               alt={project.title}
@@ -81,9 +116,16 @@ export default function Projects() {
             />
 
             <div style={{ padding: "20px" }}>
-              <h2 style={{ color: "var(--purple)", marginBottom: "10px" }}>
+              <h2 style={{ color: "var(--purple)", marginBottom: "6px" }}>
                 {project.title}
               </h2>
+
+              {project.tags && (
+                <p style={{ color: "#888", fontSize: "0.78rem", marginBottom: "10px" }}>
+                  {project.tags}
+                </p>
+              )}
+
               <p style={{ color: "#ccc", fontSize: "0.95rem" }}>
                 {project.description}
               </p>
