@@ -40,6 +40,14 @@ export default function Projects() {
       inProgress: true,
       tags: "Swift · Firebase · Twilio · Google Maps API",
     },
+    {
+      title: "Yost Facilities Dashboard",
+      image: "/images/Yost.png",
+      description:
+        "A lightweight, client-only dashboard for Yost Facilities staff to monitor facility check-ins. Aggregates data from four sectors (Ice Quality Reports, Softball Therapy Pool Checks, Fisher Therapy Pool Checks, Yost Ice Depth Checks) via published Google Sheets JSON endpoints — no backend or database required.",
+      isPrivate: true,
+      tags: "JavaScript · Google Sheets API · HTML/CSS",
+    },
   ];
 
   return (
@@ -68,22 +76,25 @@ export default function Projects() {
               borderRadius: "16px",
               border: project.inProgress
                 ? "1px solid rgba(138, 43, 226, 0.4)"
+                : project.isPrivate
+                ? "1px solid rgba(220, 53, 69, 0.4)"
                 : "1px solid rgba(255,255,255,0.08)",
               overflow: "hidden",
-              cursor: "pointer",
+              cursor: project.isPrivate ? "default" : "pointer",
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
               position: "relative",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.03)";
-              e.currentTarget.style.boxShadow =
-                "0 0 20px rgba(138, 43, 226, 0.4)";
+              e.currentTarget.style.boxShadow = project.isPrivate
+                ? "0 0 20px rgba(220, 53, 69, 0.4)"
+                : "0 0 20px rgba(138, 43, 226, 0.4)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1)";
               e.currentTarget.style.boxShadow = "none";
             }}
-            onClick={() => window.open(project.link, "_blank")}
+            onClick={() => project.link && window.open(project.link, "_blank")}
           >
             {project.inProgress && (
               <div
@@ -103,6 +114,27 @@ export default function Projects() {
                 }}
               >
                 🔨 In Progress
+              </div>
+            )}
+
+            {project.isPrivate && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  right: "12px",
+                  background: "rgba(220, 53, 69, 0.85)",
+                  color: "#fff",
+                  fontSize: "0.7rem",
+                  fontWeight: "bold",
+                  padding: "4px 10px",
+                  borderRadius: "20px",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  zIndex: 1,
+                }}
+              >
+                🔒 Private
               </div>
             )}
 
@@ -132,20 +164,22 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-block",
-                  marginTop: "12px",
-                  color: "var(--purple)",
-                  fontWeight: "bold",
-                  textDecoration: "none",
-                }}
-              >
-                View Project →
-              </a>
+              {project.link && !project.isPrivate && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-block",
+                    marginTop: "12px",
+                    color: "var(--purple)",
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                  }}
+                >
+                  View Project →
+                </a>
+              )}
             </div>
           </div>
         ))}
