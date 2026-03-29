@@ -33,6 +33,7 @@ export default function Projects() {
     {
       title: "FratMap",
       image: "/images/FratMap.png",
+      imagePosition: "left center",
       description:
         "A cross-platform mobile social app for college nightlife — featuring event discovery, friend grouping, live location sharing, and real-time coordination. Selected as one of 10 projects at V1 Demo Day.",
       link: "https://github.com/RBuddhineni",
@@ -112,6 +113,7 @@ export default function Projects() {
                 width: "100%",
                 height: "180px",
                 objectFit: "cover",
+                objectPosition: project.imagePosition || "center",
               }}
             />
 
