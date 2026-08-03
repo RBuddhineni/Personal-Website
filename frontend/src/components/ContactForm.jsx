@@ -24,7 +24,7 @@ export default function ContactForm() {
       setStatus(res.data.message);
       setForm({name:"", email:"", message:""});
     }catch(err){
-      setStatus("Error.");
+      setStatus(err.response?.data?.message || "Something went wrong. Please try again.");
     }
   };
 
