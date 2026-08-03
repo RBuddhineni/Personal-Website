@@ -4,6 +4,16 @@ import { motion, useInView } from "framer-motion";
 // ─── Add new entries to the TOP of this array (most recent first) ───────────
 const experiences = [
   {
+    role: "Machine Learning Researcher",
+    company: "UMTRI (University of Michigan Transportation Research Institute)",
+    location: "Ann Arbor, MI",
+    dates: "June 2026 – Present",
+    bullets: [
+      "Under Professor Shan Bao, engineered a multi-stage Python data pipeline (Brave Search API, PRAW) with keyword filtering to collect driver-reported ADAS distraction posts from 65+ automotive forums plus platforms like Reddit and X, running an automated discovery pass to build a 1,900+ record corpus for downstream NLP analysis.",
+      "Developed a custom filtering and preprocessing script to deduplicate at the complaint-ID level, clean, normalize, and enrich noisy user-generated data at scale, raising corpus quality for BERTopic/LDA topic modeling of driver distraction and automation complacency patterns; findings presented at the 2026 SURE Showcase.",
+    ],
+  },
+  {
     role: "Tech Analyst",
     company: "Michigan Ross Tech Plus Consulting",
     location: "Ann Arbor, MI",
